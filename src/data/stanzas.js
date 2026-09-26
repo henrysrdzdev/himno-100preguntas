@@ -13,7 +13,7 @@ export const stanzas = [
     ],
   },
   {
-    id: 'primera', number: '01', label: 'Primera estrofa', title: 'Antes del encuentro', period: 'Tierra y llegada europea',
+    id: 'primera', number: '01', label: 'Primera estrofa', title: 'La tierra y el hallazgo', period: 'Época precolombina · 1502',
     lines: [
       'India virgen y hermosa dormías',
       'de tus mares al canto sonoro,',
@@ -26,7 +26,7 @@ export const stanzas = [
     ],
   },
   {
-    id: 'segunda', number: '02', label: 'Segunda estrofa', title: 'Un nuevo pendón', period: 'Conquista',
+    id: 'segunda', number: '02', label: 'Segunda estrofa', title: 'Un nuevo pendón', period: 'Descubrimiento · 1502',
     lines: [
       'De un país donde el sol se levanta,',
       'más allá del atlante azulado,',
@@ -39,7 +39,7 @@ export const stanzas = [
     ],
   },
   {
-    id: 'tercera', number: '03', label: 'Tercera estrofa', title: 'La resistencia de Lempira', period: 'Resistencia indígena',
+    id: 'tercera', number: '03', label: 'Tercera estrofa', title: 'La resistencia de Lempira', period: 'Conquista · 1537',
     lines: [
       'Era inútil que el indio tu amado,',
       'se aprestara a la lucha con ira,',
@@ -52,7 +52,7 @@ export const stanzas = [
     ],
   },
   {
-    id: 'cuarta', number: '04', label: 'Cuarta estrofa', title: 'Tres siglos y una noticia', period: 'Época colonial',
+    id: 'cuarta', number: '04', label: 'Cuarta estrofa', title: 'Tres siglos y una noticia', period: 'Colonia · 1502-1821',
     lines: [
       'Por tres siglos tus hijos oyeron',
       'el mandato imperioso del amo;',
@@ -65,7 +65,7 @@ export const stanzas = [
     ],
   },
   {
-    id: 'quinta', number: '05', label: 'Quinta estrofa', title: 'El eco de Francia', period: 'Revolución Francesa',
+    id: 'quinta', number: '05', label: 'Quinta estrofa', title: 'El eco de Francia', period: 'Revolución Francesa · 1789',
     lines: [
       'Era Francia, la libre, la heroica,',
       'que en su sueño de siglos dormida',
