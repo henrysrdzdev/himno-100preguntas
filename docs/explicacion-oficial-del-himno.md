@@ -6,10 +6,14 @@ atribuye al «Licenciado Guadalberto Palacios», y la que la *Cátedra del Himno
 Nacional de Honduras* (Secretaría de Educación, 2023) cita como obra oficial de
 referencia en su apartado 3.3.
 
-Se guarda aquí como **material de cotejo**, no como contenido de la aplicación.
-Las explicaciones que muestra la web siguen siendo las respuestas 49 a 56 del
-cuestionario, que son versiones abreviadas de este texto. Cuando una respuesta
-del cuestionario contradiga lo que se lee aquí, manda este documento.
+Este archivo es la **fuente** de las explicaciones que muestra la sección del
+himno. `scripts/build-explanations.mjs` lo convierte en `src/data/explanations.js`:
+el texto se edita aquí, se ejecuta el script y la aplicación queda al día. No
+editar el archivo generado a mano.
+
+Las respuestas 49 a 56 del cuestionario son resúmenes de este texto y se conservan
+intactas en su propio apartado, porque son la redacción que se pide en el examen.
+Cuando una contradiga lo que se lee aquí, manda este documento.
 
 ## Sobre esta transcripción
 

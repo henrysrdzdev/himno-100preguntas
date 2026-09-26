@@ -12,6 +12,7 @@
  * en el paquete inicial: sólo se descarga cuando alguien pulsa el botón.
  */
 import { stanzas } from '../data/stanzas';
+import { explanations, EXPLANATION_SOURCE } from '../data/explanations';
 import questions from '../data/questions.json';
 
 const PAGE = { w: 595.28, h: 841.89 }; // A4 en puntos
@@ -194,13 +195,11 @@ function seccionHimno(c) {
     });
 
     c.regla(14, 16);
-    const explicacion = questions[48 + indice];
     c.bloque(indice === 0 ? 'QUÉ EXPLICA EL CORO' : 'QUÉ EXPLICA ESTA ESTROFA', { peso: 'bold', tam: 8.5, color: AZUL, espacioDespues: 11 });
-    for (const parrafo of parrafos(explicacion.answer)) {
+    for (const parrafo of parrafos(explanations[estrofa.id])) {
       c.bloque(parrafo, { tam: 10.5, interlineado: 1.68, espacioDespues: 9 });
     }
-    if (explicacion.editorialNote) c.nota(explicacion.editorialNote);
-    c.bloque('Cuestionario cívico, pregunta ' + explicacion.number, { tam: 8, color: APAGADO, espacioDespues: 0 });
+    c.bloque(EXPLANATION_SOURCE + '. Resumida en la pregunta ' + (49 + indice) + ' del cuestionario.', { tam: 8, color: APAGADO, interlineado: 1.5, espacioDespues: 0 });
   });
 }
 

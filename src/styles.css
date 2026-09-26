@@ -146,6 +146,10 @@ a { color: inherit; text-underline-offset: 3px; }
 .answer-paragraphs p:last-child { margin-bottom: 0; }
 .full-explanation > a { display: inline-flex; align-items: center; gap: 8px; margin-top: 25px; color: #007db8; font-size: 12px; font-weight: 800; text-decoration: none; }
 .full-explanation > a:hover { text-decoration: underline; }
+/* Atribución de la explicación oficial y salto a su resumen en el cuestionario. */
+.explanation-source { margin: 24px 0 12px; padding-top: 18px; border-top: 1px solid #cfe7f1; color: var(--muted-ink); font-size: 12px; font-style: italic; line-height: 1.6; }
+.explanation-jump { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; padding: 0 17px; border: 1px solid #a7d0df; border-radius: 50px; background: rgba(255,255,255,.75); color: #076b9e; font-size: 12.5px; font-weight: 700; text-align: left; }
+.explanation-jump:hover { background: #e7f6fe; }
 mark { background: none; color: inherit; box-shadow: inset 0 -.36em var(--marker); padding: 0 2px; }
 .study-pager { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 38px 0 60px; }
 .study-pager button { display: flex; align-items: center; gap: 9px; min-height: 45px; padding: 0 16px; border: 1px solid #a7d0df; border-radius: 50px; background: rgba(255,255,255,.75); color: #076b9e; font-size: 13px; font-weight: 800; }
