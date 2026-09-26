@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { AnimatePresence, motion, useReducedMotion, useScroll, useSpring, useTransform } from 'motion/react';
-import { ArrowDown, ArrowLeft, ArrowRight, Bookmark, BookOpen, CheckCircle, ChevronDown, CloseCircle, Copy, Eye, EyeOff, InfoCircle, Palette, Pin, Search3, TextHighlight, X } from 'reicon-react';
+import { ArrowDown, ArrowLeft, ArrowRight, Bookmark, BookOpen, CheckCircle, ChevronDown, CloseCircle, Copy, Eye, EyeOff, FilePdf, InfoCircle, Palette, Pin, Search3, TextHighlight, X } from 'reicon-react';
 import { PreviewCard, PreviewCardPanel, PreviewCardTrigger } from './components/animate-ui/components/base/preview-card';
 import { stanzas } from './data/stanzas';
 import questions from './data/questions.json';
@@ -71,6 +71,7 @@ function App() {
   const isMobile = useMediaQuery(MOBILE_QUERY);
   const [sheet, setSheet] = useState(null);
   const [radial, setRadial] = useState(null), [toast, setToast] = useState('');
+  const [pdfEstado, setPdfEstado] = useState('listo');
   const [fontNotice, setFontNotice] = useState(null);
   const studyRef = useRef(null), questionRefs = useRef([]), bubbleTimer = useRef(null), scrollTick = useRef(false), jumping = useRef(false), jumpTimer = useRef(null);
   const lastSelection = useRef({ text: '', unitKey: '' });
@@ -135,6 +136,30 @@ function App() {
   async function actionCopy() { if (!radial) return; try { await navigator.clipboard.writeText(radial.text); setToast('Texto copiado'); } catch { setToast('No se pudo copiar. Prueba Ctrl+C.'); } setRadial(null); lastSelection.current = { text: '', unitKey: '' }; }
   function actionPin() { if (!radial) return; setBookmarks(all => [...all, { id: crypto.randomUUID(), unitKey: radial.unitKey, color, createdAt: Date.now() }]); setToast('Lugar guardado'); setRadial(null); lastSelection.current = { text: '', unitKey: '' }; window.getSelection()?.removeAllRanges(); }
   function goMark(item) { const [kind, raw] = item.unitKey.split('-'); if (kind === 's') goStanza(Number(raw)); else goQuestion(Number(raw)); }
+  const descargarPdf = useCallback(async () => {
+    if (pdfEstado === 'armando') return;
+    setPdfEstado('armando');
+    setToast('Armando el cuadernillo…');
+    // El armado bloquea el hilo cerca de un segundo (bastante más en un teléfono),
+    // así que se cede un fotograma para que el botón alcance a pintar su estado.
+    // requestAnimationFrame no corre con la pestaña en segundo plano, de modo que
+    // un temporizador corre la carrera y evita que la descarga se quede colgada
+    // si la persona cambia de aplicación mientras se genera.
+    await new Promise(listo => {
+      const red = setTimeout(listo, 80);
+      requestAnimationFrame(() => { clearTimeout(red); setTimeout(listo, 0); });
+    });
+    try {
+      const { descargarCuadernillo } = await import('./lib/study-pdf');
+      const paginas = await descargarCuadernillo();
+      setToast('Cuadernillo listo: ' + paginas + ' páginas');
+    } catch (error) {
+      console.error(error);
+      setToast('No se pudo generar el PDF. Intenta de nuevo.');
+    } finally {
+      setPdfEstado('listo');
+    }
+  }, [pdfEstado]);
   const searchResults = useMemo(() => { const term = search.trim().toLocaleLowerCase('es'); return term ? questions.filter(q => (q.number + ' ' + q.question + ' ' + q.answer).toLocaleLowerCase('es').includes(term)).slice(0, 8) : []; }, [search]);
   const bubbleItems = mode === 'himno' ? stanzas.map((s, i) => ({ label: s.label, short: i === 0 ? 'C' : String(i), active: stanzaIndex === i, action: () => goStanza(i, true) })) : CATEGORIES.map((c, i) => ({ label: c.label, short: String(i + 1), active: questions[questionIndex].category === c.label, action: () => goQuestion(c.first - 1, true) }));
   const markerLabel = item => item.unitKey.startsWith('s-') ? stanzas[Number(item.unitKey.slice(2))]?.label : 'Pregunta ' + (Number(item.unitKey.slice(2)) + 1);
@@ -161,7 +186,7 @@ function App() {
             </PreviewCard>
           </motion.aside>
         </motion.div>
-        <div className="hero-bottom"><div className="hero-actions"><button type="button" onClick={() => goStanza(0, true)}>Explorar el himno <DuoIcon icon={ArrowRight} size={21}/></button><button type="button" onClick={() => goQuestion(0, true)}>Abrir cuestionario <DuoIcon icon={ArrowRight} size={21}/></button></div><button className="hero-scroll" type="button" onClick={() => scrollToStudy(true)}>DESLIZA PARA ESTUDIAR <DuoIcon icon={ArrowDown} size={18}/></button></div>
+        <div className="hero-bottom"><div className="hero-actions"><button type="button" onClick={() => goStanza(0, true)}>Explorar el himno <DuoIcon icon={ArrowRight} size={21}/></button><button type="button" onClick={() => goQuestion(0, true)}>Abrir cuestionario <DuoIcon icon={ArrowRight} size={21}/></button><button type="button" className="hero-download" onClick={descargarPdf} disabled={pdfEstado === 'armando'} aria-label="Descargar el himno y las 100 preguntas en un PDF">{pdfEstado === 'armando' ? 'Armando el PDF…' : 'Descargar todo en PDF'} <DuoIcon icon={FilePdf} size={21}/></button></div><button className="hero-scroll" type="button" onClick={() => scrollToStudy(true)}>DESLIZA PARA ESTUDIAR <DuoIcon icon={ArrowDown} size={18}/></button></div>
       </motion.section>
       <section className="study-section" id="estudiar" ref={studyRef}>
         <header className="study-topbar"><div><span className="study-eyebrow">12 INFO STUDY <b>/</b> {mode === 'himno' ? 'HIMNO NACIONAL' : 'CUESTIONARIO CÍVICO'}</span><h2>{mode === 'himno' ? 'Himno Nacional de Honduras' : '100 preguntas cívicas'}</h2></div><div className="study-actions"><button type="button" className={focusMode ? 'selected' : ''} data-tooltip={focusMode ? 'Salir del enfoque' : 'Modo enfoque'} aria-label={focusMode ? 'Salir del modo enfoque' : 'Modo enfoque'} onClick={() => setFocusMode(x => !x)}><DuoIcon icon={focusMode ? EyeOff : Eye} size={20}/></button><button type="button" className="font-size-button" data-tooltip={'Tamaño del texto · nivel ' + (fontScale + 1)} aria-label={'Cambiar tamaño del texto. Nivel ' + (fontScale + 1) + ' de 4'} onClick={cycleFontScale}><span className="font-glyph" aria-hidden="true"><b>A</b><i>a</i></span><span className="font-level" aria-hidden="true">{fontScale + 1}</span><AnimatePresence>{fontNotice && <motion.span key={fontNotice.id} className="font-level-pop" aria-hidden="true" initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 4, scale: .55 }} animate={reduceMotion ? { opacity: 1 } : { opacity: [0, 1, 1, 0], y: [4, -12, -22, -30], scale: [.55, 1.18, 1, .9] }} exit={{ opacity: 0 }} transition={{ duration: .78, ease: [0.2, .8, .2, 1] }}>{fontNotice.level}</motion.span>}</AnimatePresence></button></div></header>

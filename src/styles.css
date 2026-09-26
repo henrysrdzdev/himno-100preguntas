@@ -90,6 +90,10 @@ a { color: inherit; text-underline-offset: 3px; }
 .hero-actions button:hover { transform: translateY(-4px); background: rgba(255,255,255,.29); }
 .hero-actions button:first-child:hover { background: #e4fbff; }
 .hero-actions button:nth-child(2):hover { background: rgba(2,66,108,.62); }
+/* Descarga del cuadernillo: es una utilidad, no el camino principal, así que pesa menos que los dos accesos. */
+.hero-actions .hero-download { border-color: rgba(255,255,255,.34); background: rgba(255,255,255,.1); font-weight: 600; }
+.hero-actions .hero-download:hover { background: rgba(255,255,255,.2); }
+.hero-actions .hero-download:disabled { opacity: .7; transform: none; }
 .hero-scroll { display: flex; align-items: center; gap: 12px; padding: 0 0 10px; border: 0; background: none; white-space: nowrap; }
 .hero-scroll .duo-icon { animation: scroll-arrow 2s ease-in-out infinite; }
 @keyframes scroll-arrow { 50% { transform: translateY(6px); } }
@@ -828,5 +832,55 @@ button:hover .duo-line { transform: translateY(-1px) rotate(4deg); }
   }
   .mobile-now-label strong {
     font-size: 13px;
+  }
+}
+
+/* La portada es un flex en columna con overflow oculto: sin min-height 0 el bloque
+   central no cede y el tercer acceso queda recortado en pantallas cortas. */
+@media (max-width: 760px) {
+  .hero-copy {
+    min-height: 0;
+  }
+  .hero-actions {
+    gap: 8px;
+  }
+  .hero-actions .hero-download {
+    min-height: 40px;
+    font-size: 10.5px;
+  }
+}
+
+/* Teléfonos de pantalla corta: se aprieta la portada para que quepan los tres accesos. */
+@media (max-width: 760px) and (max-height: 720px) {
+  .hero-top,
+  .hero-bottom {
+    padding: 16px 20px;
+  }
+  .hero-kicker {
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
+  .hero-copy h1 {
+    font-size: clamp(44px, 13vw, 62px);
+  }
+  .hero-manifesto {
+    padding: 8px 0 6px 14px;
+  }
+  .hero-manifesto-label {
+    font-size: clamp(26px, 8vw, 34px);
+  }
+  .hero-manifesto p {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .hero-author {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .hero-actions button {
+    min-height: 42px;
+  }
+  .hero-actions .hero-download {
+    min-height: 38px;
   }
 }
