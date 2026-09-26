@@ -326,8 +326,9 @@ button:hover .duo-line { transform: translateY(-1px) rotate(4deg); }
   .top-search-bar input { font-size: 13px; }
   .top-search-handle { min-height: 32px; }
   .top-search-results { border-radius: 14px; }
-  .bubble-nav { right: 0; padding: 7px 5px; gap: 4px; }
-  .bubble-handle { width: 12px; }
+  .bubble-nav, .bubble-nav:hover, .bubble-nav:focus-within { right: 0; padding: 7px 5px; gap: 4px; transform: translate(calc(100% - 38px), -50%); }
+  .bubble-nav.is-visible, .bubble-nav.is-visible:hover, .bubble-nav.is-visible:focus-within { transform: translate(0,-50%); }
+  .bubble-handle { width: 28px; height: 56px; padding-inline: 10px 7px; touch-action: manipulation; }
   .bubble-item { width: 31px; height: 31px; font-size: 10px; }
   .dock-button { width: 34px; height: 34px; }
   .dock-index { gap: 5px; max-height: min(296px,39svh); padding: 5px 6px; }

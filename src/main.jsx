@@ -51,7 +51,7 @@ function App() {
   const [bookmarks, setBookmarks] = useState(() => stored('raiz-bookmarks-v1', []));
   const [highlights, setHighlights] = useState(() => stored('raiz-highlights-v1', []));
   const [color, setColor] = useState(() => stored('raiz-color-v1', COLORS[0].value));
-  const [search, setSearch] = useState(''), [bubbleVisible, setBubbleVisible] = useState(true);
+  const [search, setSearch] = useState(''), [bubbleVisible, setBubbleVisible] = useState(() => typeof window !== 'undefined' && !window.matchMedia('(max-width: 760px)').matches);
   const [searchOpen, setSearchOpen] = useState(false), [markersOpen, setMarkersOpen] = useState(false);
   const [radial, setRadial] = useState(null), [toast, setToast] = useState('');
   const [fontNotice, setFontNotice] = useState(null);
@@ -67,11 +67,26 @@ function App() {
   useEffect(() => { if (!toast) return; const timer = setTimeout(() => setToast(''), 3200); return () => clearTimeout(timer); }, [toast]);
   useEffect(() => { if (!fontNotice) return; const timer = setTimeout(() => setFontNotice(null), 820); return () => clearTimeout(timer); }, [fontNotice]);
   useEffect(() => { function remember() { const selection = window.getSelection(), text = selection?.toString().trim(); if (!text) return; const unit = selection.anchorNode?.parentElement?.closest('[data-unit-key]')?.dataset.unitKey; if (unit) lastSelection.current = { text, unitKey: unit }; } document.addEventListener('selectionchange', remember); return () => document.removeEventListener('selectionchange', remember); }, []);
-  const showBubble = useCallback(() => { setBubbleVisible(true); clearTimeout(bubbleTimer.current); bubbleTimer.current = setTimeout(() => { setBubbleVisible(false); setMarkersOpen(false); }, 3300); }, []);
+  const showBubble = useCallback(() => {
+    if (window.matchMedia('(max-width: 760px)').matches) return;
+    setBubbleVisible(true);
+    clearTimeout(bubbleTimer.current);
+    bubbleTimer.current = setTimeout(() => { setBubbleVisible(false); setMarkersOpen(false); }, 3300);
+  }, []);
   useEffect(() => { showBubble(); return () => clearTimeout(bubbleTimer.current); }, [showBubble]);
   useEffect(() => {
+    const query = window.matchMedia('(max-width: 760px)');
+    const syncDock = event => { clearTimeout(bubbleTimer.current); setMarkersOpen(false); setBubbleVisible(!event.matches); if (!event.matches) showBubble(); };
+    query.addEventListener('change', syncDock);
+    return () => query.removeEventListener('change', syncDock);
+  }, [showBubble]);
+  useEffect(() => {
     function onScroll() {
-      showBubble();
+      if (window.matchMedia('(max-width: 760px)').matches) {
+        clearTimeout(bubbleTimer.current);
+        setBubbleVisible(false);
+        setMarkersOpen(false);
+      } else showBubble();
       if (mode !== 'preguntas') return;
       if (scrollTick.current || jumping.current) return; scrollTick.current = true;
       requestAnimationFrame(() => {
@@ -159,11 +174,18 @@ function TopSearch({ open, setOpen, search, setSearch, searchResults, goQuestion
   </div>;
 }
 function StudyDock({ mode, bubbleVisible, setBubbleVisible, bubbleItems, bubbleTimer, showBubble, markersOpen, setMarkersOpen, bookmarks, setBookmarks, highlights, setHighlights, markerLabel, goMark, goStanza, goQuestions, reduceMotion }) {
-  const keepOpen = () => { clearTimeout(bubbleTimer.current); setBubbleVisible(true); };
+  const isMobileDock = () => window.matchMedia('(max-width: 760px)').matches;
+  const keepOpen = () => { if (isMobileDock()) return; clearTimeout(bubbleTimer.current); setBubbleVisible(true); };
   const toggleMarkers = () => { keepOpen(); setMarkersOpen(x => !x); };
+  const toggleDock = () => {
+    clearTimeout(bubbleTimer.current);
+    setMarkersOpen(false);
+    if (isMobileDock()) setBubbleVisible(open => !open);
+    else setBubbleVisible(true);
+  };
   const savedCount = bookmarks.length + highlights.length;
   return <nav className={'bubble-nav ' + (bubbleVisible ? 'is-visible' : '')} aria-label="Centro de navegación" onMouseEnter={keepOpen} onMouseLeave={showBubble} onFocus={keepOpen} onBlur={e => { if (!e.currentTarget.contains(e.relatedTarget)) showBubble(); }}>
-    <button className="bubble-handle" type="button" aria-label="Mostrar navegación" onClick={() => { setBubbleVisible(true); setMarkersOpen(false); clearTimeout(bubbleTimer.current); }}><span/><span/><span/></button>
+    <button className="bubble-handle" type="button" aria-label={bubbleVisible ? 'Ocultar navegación' : 'Mostrar navegación'} aria-expanded={bubbleVisible} onClick={toggleDock}><span/><span/><span/></button>
     <div className="bubble-stack">
       <button type="button" className={'dock-button dock-mode ' + (mode === 'himno' ? 'active' : '')} aria-label="Estudiar el Himno Nacional" data-tooltip="Himno" onClick={goStanza}><DuoIcon icon={BookOpen} size={21}/></button>
       <button type="button" className={'dock-button dock-mode ' + (mode === 'preguntas' ? 'active' : '')} aria-label="Estudiar el cuestionario cívico" data-tooltip="Cuestionario" onClick={goQuestions}><DuoIcon icon={CheckCircle} size={21}/></button>
