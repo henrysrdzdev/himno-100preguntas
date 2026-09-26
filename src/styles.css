@@ -326,9 +326,12 @@ button:hover .duo-line { transform: translateY(-1px) rotate(4deg); }
   .top-search-bar input { font-size: 13px; }
   .top-search-handle { min-height: 32px; }
   .top-search-results { border-radius: 14px; }
-  .bubble-nav, .bubble-nav:hover, .bubble-nav:focus-within { right: 0; padding: 7px 5px; gap: 4px; transform: translate(calc(100% - 38px), -50%); }
+  .bubble-nav, .bubble-nav:hover, .bubble-nav:focus-within { right: 0; padding: 7px 5px; gap: 4px; transform: translate(calc(100% - 32px), -50%); }
   .bubble-nav.is-visible, .bubble-nav.is-visible:hover, .bubble-nav.is-visible:focus-within { transform: translate(0,-50%); }
-  .bubble-handle { width: 28px; height: 56px; padding-inline: 10px 7px; touch-action: manipulation; }
+  .bubble-nav:not(.is-visible), .bubble-nav:not(.is-visible):hover, .bubble-nav:not(.is-visible):focus-within { border-color: transparent; background: transparent; box-shadow: none; backdrop-filter: none; }
+  .bubble-handle { position: relative; z-index: 0; width: 28px; height: 56px; padding: 0 9px; touch-action: manipulation; }
+  .bubble-nav:not(.is-visible) .bubble-handle::before { content: ''; position: absolute; z-index: 0; top: 7px; bottom: 7px; left: 50%; width: 10px; border: 1px solid rgba(113,183,211,.28); border-right: 0; border-radius: 9px 0 0 9px; background: rgba(255,255,255,.9); box-shadow: 0 5px 16px -10px rgba(5,71,103,.55); transform: translateX(-50%); }
+  .bubble-nav:not(.is-visible) .bubble-handle span { position: relative; z-index: 1; width: 3px; height: 3px; background: #0b83b9; }
   .bubble-item { width: 31px; height: 31px; font-size: 10px; }
   .dock-button { width: 34px; height: 34px; }
   .dock-index { gap: 5px; max-height: min(296px,39svh); padding: 5px 6px; }
