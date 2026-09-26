@@ -1,0 +1,474 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-26T04:52:12.548Z",
+  "title": "Design System: 12 INFO STUDY",
+  "extensions": {
+    "colorMeta": {
+      "background": {
+        "role": "neutral",
+        "displayName": "White Surface",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "hsl(0 0% 15%)",
+          "hsl(0 0% 26%)",
+          "hsl(0 0% 38%)",
+          "hsl(0 0% 49%)",
+          "hsl(0 0% 61%)",
+          "hsl(0 0% 73%)",
+          "hsl(0 0% 84%)",
+          "hsl(0 0% 95%)"
+        ]
+      },
+      "ambient": {
+        "role": "neutral",
+        "displayName": "Cyan White Field",
+        "canonical": "#f9fdff",
+        "tonalRamp": [
+          "hsl(200 100% 15%)",
+          "hsl(200 100% 26%)",
+          "hsl(200 100% 38%)",
+          "hsl(200 100% 49%)",
+          "hsl(200 100% 61%)",
+          "hsl(200 100% 73%)",
+          "hsl(200 100% 84%)",
+          "hsl(200 100% 95%)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Navy Ink",
+        "canonical": "#092f43",
+        "tonalRamp": [
+          "hsl(201 76% 15%)",
+          "hsl(201 76% 26%)",
+          "hsl(201 76% 38%)",
+          "hsl(201 76% 49%)",
+          "hsl(201 76% 61%)",
+          "hsl(201 76% 73%)",
+          "hsl(201 76% 84%)",
+          "hsl(201 76% 95%)"
+        ]
+      },
+      "muted-ink": {
+        "role": "neutral",
+        "displayName": "Muted Navy",
+        "canonical": "#456e81",
+        "tonalRamp": [
+          "hsl(199 30% 15%)",
+          "hsl(199 30% 26%)",
+          "hsl(199 30% 38%)",
+          "hsl(199 30% 49%)",
+          "hsl(199 30% 61%)",
+          "hsl(199 30% 73%)",
+          "hsl(199 30% 84%)",
+          "hsl(199 30% 95%)"
+        ]
+      },
+      "flag-blue": {
+        "role": "primary",
+        "displayName": "Flag Blue",
+        "canonical": "#087dca",
+        "tonalRamp": [
+          "hsl(204 92% 15%)",
+          "hsl(204 92% 26%)",
+          "hsl(204 92% 38%)",
+          "hsl(204 92% 49%)",
+          "hsl(204 92% 61%)",
+          "hsl(204 92% 73%)",
+          "hsl(204 92% 84%)",
+          "hsl(204 92% 95%)"
+        ]
+      },
+      "bright-cyan": {
+        "role": "primary",
+        "displayName": "Bright Cyan",
+        "canonical": "#0ab5e7",
+        "tonalRamp": [
+          "hsl(194 92% 15%)",
+          "hsl(194 92% 26%)",
+          "hsl(194 92% 38%)",
+          "hsl(194 92% 49%)",
+          "hsl(194 92% 61%)",
+          "hsl(194 92% 73%)",
+          "hsl(194 92% 84%)",
+          "hsl(194 92% 95%)"
+        ]
+      },
+      "deep-blue": {
+        "role": "primary",
+        "displayName": "Deep Blue",
+        "canonical": "#07486f",
+        "tonalRamp": [
+          "hsl(203 88% 15%)",
+          "hsl(203 88% 26%)",
+          "hsl(203 88% 38%)",
+          "hsl(203 88% 49%)",
+          "hsl(203 88% 61%)",
+          "hsl(203 88% 73%)",
+          "hsl(203 88% 84%)",
+          "hsl(203 88% 95%)"
+        ]
+      },
+      "accent-pale": {
+        "role": "primary",
+        "displayName": "Pale Accent",
+        "canonical": "#b9eafb",
+        "tonalRamp": [
+          "hsl(195 89% 15%)",
+          "hsl(195 89% 26%)",
+          "hsl(195 89% 38%)",
+          "hsl(195 89% 49%)",
+          "hsl(195 89% 61%)",
+          "hsl(195 89% 73%)",
+          "hsl(195 89% 84%)",
+          "hsl(195 89% 95%)"
+        ]
+      },
+      "accent-pro": {
+        "role": "primary",
+        "displayName": "Pro Blue",
+        "canonical": "#0789d2",
+        "tonalRamp": [
+          "hsl(202 94% 15%)",
+          "hsl(202 94% 26%)",
+          "hsl(202 94% 38%)",
+          "hsl(202 94% 49%)",
+          "hsl(202 94% 61%)",
+          "hsl(202 94% 73%)",
+          "hsl(202 94% 84%)",
+          "hsl(202 94% 95%)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Cyan Border",
+        "canonical": "#bddae8",
+        "tonalRamp": [
+          "hsl(200 48% 15%)",
+          "hsl(200 48% 26%)",
+          "hsl(200 48% 38%)",
+          "hsl(200 48% 49%)",
+          "hsl(200 48% 61%)",
+          "hsl(200 48% 73%)",
+          "hsl(200 48% 84%)",
+          "hsl(200 48% 95%)"
+        ]
+      },
+      "hero-start": {
+        "role": "primary",
+        "displayName": "Hero Bright Blue",
+        "canonical": "#128ed1",
+        "tonalRamp": [
+          "hsl(201 84% 15%)",
+          "hsl(201 84% 26%)",
+          "hsl(201 84% 38%)",
+          "hsl(201 84% 49%)",
+          "hsl(201 84% 61%)",
+          "hsl(201 84% 73%)",
+          "hsl(201 84% 84%)",
+          "hsl(201 84% 95%)"
+        ]
+      },
+      "hero-middle": {
+        "role": "primary",
+        "displayName": "Hero Middle Blue",
+        "canonical": "#057db9",
+        "tonalRamp": [
+          "hsl(200 95% 15%)",
+          "hsl(200 95% 26%)",
+          "hsl(200 95% 38%)",
+          "hsl(200 95% 49%)",
+          "hsl(200 95% 61%)",
+          "hsl(200 95% 73%)",
+          "hsl(200 95% 84%)",
+          "hsl(200 95% 95%)"
+        ]
+      },
+      "hero-end": {
+        "role": "primary",
+        "displayName": "Hero Deep Blue",
+        "canonical": "#035f9d",
+        "tonalRamp": [
+          "hsl(204 96% 15%)",
+          "hsl(204 96% 26%)",
+          "hsl(204 96% 38%)",
+          "hsl(204 96% 49%)",
+          "hsl(204 96% 61%)",
+          "hsl(204 96% 73%)",
+          "hsl(204 96% 84%)",
+          "hsl(204 96% 95%)"
+        ]
+      },
+      "marker-blue": {
+        "role": "secondary",
+        "displayName": "Blue Marker",
+        "canonical": "#1689e9",
+        "tonalRamp": [
+          "hsl(207 83% 15%)",
+          "hsl(207 83% 26%)",
+          "hsl(207 83% 38%)",
+          "hsl(207 83% 49%)",
+          "hsl(207 83% 61%)",
+          "hsl(207 83% 73%)",
+          "hsl(207 83% 84%)",
+          "hsl(207 83% 95%)"
+        ]
+      },
+      "marker-coral": {
+        "role": "secondary",
+        "displayName": "Coral Marker",
+        "canonical": "#f36a52",
+        "tonalRamp": [
+          "hsl(9 87% 15%)",
+          "hsl(9 87% 26%)",
+          "hsl(9 87% 38%)",
+          "hsl(9 87% 49%)",
+          "hsl(9 87% 61%)",
+          "hsl(9 87% 73%)",
+          "hsl(9 87% 84%)",
+          "hsl(9 87% 95%)"
+        ]
+      },
+      "marker-gold": {
+        "role": "secondary",
+        "displayName": "Gold Marker",
+        "canonical": "#f5b427",
+        "tonalRamp": [
+          "hsl(41 91% 15%)",
+          "hsl(41 91% 26%)",
+          "hsl(41 91% 38%)",
+          "hsl(41 91% 49%)",
+          "hsl(41 91% 61%)",
+          "hsl(41 91% 73%)",
+          "hsl(41 91% 84%)",
+          "hsl(41 91% 95%)"
+        ]
+      },
+      "marker-green": {
+        "role": "secondary",
+        "displayName": "Green Marker",
+        "canonical": "#21aa87",
+        "tonalRamp": [
+          "hsl(165 67% 15%)",
+          "hsl(165 67% 26%)",
+          "hsl(165 67% 38%)",
+          "hsl(165 67% 49%)",
+          "hsl(165 67% 61%)",
+          "hsl(165 67% 73%)",
+          "hsl(165 67% 84%)",
+          "hsl(165 67% 95%)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "hero": {
+        "displayName": "Hero",
+        "purpose": "Two-line cover wordmark."
+      },
+      "section": {
+        "displayName": "Section",
+        "purpose": "Study area entrance."
+      },
+      "folio": {
+        "displayName": "Folio",
+        "purpose": "Current stanza or question-view heading."
+      },
+      "reading": {
+        "displayName": "Reading",
+        "purpose": "Anthem lines and question prompts."
+      },
+      "answer": {
+        "displayName": "Answer",
+        "purpose": "Complete explanation and answer paragraphs."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Navigation and controls."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Small section labels and metadata."
+      }
+    },
+    "shadows": [
+      {
+        "name": "hero",
+        "value": "0 28px 70px -40px #086c9e",
+        "purpose": "Diffuse cover depth."
+      },
+      {
+        "name": "dock",
+        "value": "0 18px 50px -30px rgba(7,84,119,.55)",
+        "purpose": "Separate the retractable controls from the page edge."
+      },
+      {
+        "name": "active-question",
+        "value": "0 26px 50px -42px #09648c",
+        "purpose": "Lift the current question."
+      },
+      {
+        "name": "radial-tools",
+        "value": "0 20px 55px rgba(5,53,79,.24)",
+        "purpose": "Float reading tools."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ambient-drift",
+        "value": "18s ease-in-out infinite alternate",
+        "purpose": "Move pale ambient light behind the page."
+      },
+      {
+        "name": "hero-light",
+        "value": "12s ease-in-out infinite alternate",
+        "purpose": "Move the cover light layers."
+      },
+      {
+        "name": "bubble-reveal",
+        "value": ".5s cubic-bezier(.2,1,.3,1)",
+        "purpose": "Slide quick navigation from the right edge."
+      },
+      {
+        "name": "answer-reveal",
+        "value": ".34s cubic-bezier(.22,1,.36,1)",
+        "purpose": "Open and close the current answer."
+      },
+      {
+        "name": "reduced-motion",
+        "value": ".01ms animation and transition duration",
+        "purpose": "Respect reduced motion preference."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "medium",
+        "value": "1100px"
+      },
+      {
+        "name": "compact",
+        "value": "760px"
+      },
+      {
+        "name": "narrow",
+        "value": "390px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Hero Primary Action",
+      "kind": "button",
+      "refersTo": "hero-primary-action",
+      "description": "Solid white pill that enters the hymn.",
+      "html": "<button class=\"ds-hero-primary\">Explorar el himno</button>",
+      "css": ".ds-hero-primary { min-height:50px; padding:0 20px; border:1px solid white; border-radius:50px; background:white; color:#04699e; font:700 13px \"DM Sans\",Arial,sans-serif; cursor:pointer; transition:background .2s,transform .28s; } .ds-hero-primary:hover { background:#e4fbff; transform:translateY(-4px); } .ds-hero-primary:focus-visible { outline:3px solid #08a4dd; outline-offset:3px; }"
+    },
+    {
+      "name": "Hero Secondary Action",
+      "kind": "button",
+      "refersTo": "hero-secondary-action",
+      "description": "Translucent companion action on the blue cover.",
+      "html": "<button class=\"ds-hero-secondary\">Abrir cuestionario</button>",
+      "css": ".ds-hero-secondary { min-height:50px; padding:0 20px; border:1px solid rgba(255,255,255,.45); border-radius:50px; background:rgba(255,255,255,.15); color:white; backdrop-filter:blur(9px); font:700 13px \"DM Sans\",Arial,sans-serif; cursor:pointer; transition:background .2s,transform .28s; } .ds-hero-secondary:hover { background:rgba(255,255,255,.29); transform:translateY(-4px); } .ds-hero-secondary:focus-visible { outline:3px solid #08a4dd; outline-offset:3px; }"
+    },
+    {
+      "name": "Dock Destination",
+      "kind": "nav",
+      "description": "Circular contextual destination with a blue active state.",
+      "html": "<button class=\"ds-side-link ds-current\"><span class=\"ds-side-number\">01</span> Primera estrofa</button>",
+      "css": ".ds-side-link { display:flex; align-items:center; gap:12px; min-height:38px; padding:7px 10px 7px 25px; border:0; border-radius:11px; background:transparent; color:#174b66; font:700 13px \"DM Sans\",Arial,sans-serif; cursor:pointer; } .ds-side-number { width:26px; color:#087db9; font-size:11px; font-weight:800; } .ds-side-link:hover,.ds-current { background:#e5f6fc; color:#006cae; } .ds-side-link:focus-visible { outline:3px solid #08a4dd; outline-offset:3px; }"
+    },
+    {
+      "name": "Dock Search",
+      "kind": "input",
+      "description": "Retractable search field extending left from the top dock control.",
+      "html": "<label class=\"ds-side-search\"><input type=\"search\" placeholder=\"Número o palabra\" /></label>",
+      "css": ".ds-side-search { display:flex; align-items:center; padding:10px; border:1px solid #b7dce9; border-radius:11px; background:rgba(255,255,255,.8); } .ds-side-search:focus-within { border-color:#087dca; box-shadow:0 0 0 3px #b9eafb; } .ds-side-search input { width:100%; min-width:0; border:0; outline:0; background:transparent; color:#092f43; font:12px \"DM Sans\",Arial,sans-serif; } .ds-side-search input::placeholder { color:#6e9bae; }"
+    },
+    {
+      "name": "Study Tab",
+      "kind": "nav",
+      "description": "Mode switch with blue line and count chip.",
+      "html": "<button class=\"ds-study-tab ds-selected\">Himno <span>08</span></button>",
+      "css": ".ds-study-tab { position:relative; display:flex; align-items:center; gap:9px; padding:0 1px 19px; border:0; background:none; color:#5c8498; font:700 15px \"DM Sans\",Arial,sans-serif; cursor:pointer; } .ds-study-tab span { padding:3px 6px; border-radius:5px; background:#e2f4fb; color:#0875ad; font-size:11px; } .ds-study-tab:hover,.ds-selected { color:#006fae; } .ds-selected:after { content:\"\"; position:absolute; bottom:-1px; left:0; right:0; height:3px; border-radius:4px; background:#078ed3; } .ds-study-tab:focus-visible { outline:3px solid #08a4dd; outline-offset:3px; }"
+    },
+    {
+      "name": "Study Tool",
+      "kind": "button",
+      "refersTo": "study-tool",
+      "description": "Circular control for focus or reading tools.",
+      "html": "<button class=\"ds-study-tool\" aria-label=\"Modo enfoque\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" aria-hidden=\"true\"><path d=\"M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/></svg></button>",
+      "css": ".ds-study-tool { display:grid; place-items:center; width:48px; height:48px; border:1px solid #b8dbe9; border-radius:50%; background:rgba(255,255,255,.7); color:#07486f; cursor:pointer; transition:transform .25s,background .25s; } .ds-study-tool:hover { transform:translateY(-3px); background:#dff7ff; } .ds-study-tool:focus-visible { outline:3px solid #08a4dd; outline-offset:3px; }"
+    },
+    {
+      "name": "Question Card",
+      "kind": "card",
+      "refersTo": "question-card",
+      "description": "The active scrolling question with expanded answer.",
+      "html": "<article class=\"ds-question\"><span class=\"ds-question-number\">01</span><div><small>EL HIMNO</small><strong>¿Qué representa la bandera?</strong><p>La respuesta completa aparece aquí.</p></div></article>",
+      "css": ".ds-question { display:flex; gap:22px; padding:27px 29px; border:1px solid #43a7d1; border-radius:19px; background:rgba(255,255,255,.91); color:#092f43; box-shadow:0 26px 50px -42px #09648c; } .ds-question-number { color:#087fbb; font:35px/.95 \"Instrument Serif\",Georgia,serif; } .ds-question div { display:flex; flex-direction:column; gap:9px; } .ds-question small { color:#067bb5; font:800 11px \"DM Sans\",Arial,sans-serif; letter-spacing:.15em; } .ds-question strong { font:500 20px/1.5 Literata,Georgia,serif; } .ds-question p { margin:8px 0 0; font:18px/1.85 \"DM Sans\",Arial,sans-serif; }"
+    },
+    {
+      "name": "Explanation Panel",
+      "kind": "card",
+      "refersTo": "explanation-panel",
+      "description": "Complete stanza explanation with translucent white surface.",
+      "html": "<section class=\"ds-explanation\"><h3>¿Qué explica esta estrofa?</h3><p>La explicación completa se lee aquí.</p></section>",
+      "css": ".ds-explanation { padding:34px 42px 46px; border:1px solid #b8dce9; border-radius:22px; background:rgba(255,255,255,.81); color:#143d50; box-shadow:0 25px 60px -53px #145d7e; backdrop-filter:blur(14px); } .ds-explanation h3 { margin:0 0 20px; font:400 57px/1 \"Instrument Serif\",Georgia,serif; } .ds-explanation p { margin:0; font:19px/1.85 \"DM Sans\",Arial,sans-serif; }"
+    },
+    {
+      "name": "Navigation Bubble",
+      "kind": "custom",
+      "description": "Auto-hiding right-edge shortcut with active blue item.",
+      "html": "<nav class=\"ds-bubble\"><button class=\"ds-bubble-item ds-bubble-active\" aria-label=\"Coro\">C</button><button class=\"ds-bubble-item\" aria-label=\"Primera estrofa\">1</button></nav>",
+      "css": ".ds-bubble { display:flex; flex-direction:column; gap:6px; width:max-content; padding:11px 9px; border:1px solid rgba(23,127,166,.23); border-radius:36px; background:rgba(255,255,255,.88); box-shadow:0 16px 50px -32px #075477; backdrop-filter:blur(20px); } .ds-bubble-item { width:39px; height:39px; border:1px solid #b2d8e6; border-radius:50%; background:rgba(238,249,255,.9); color:#136f9e; font:800 12px \"DM Sans\",Arial,sans-serif; cursor:pointer; transition:transform .25s,background .25s; } .ds-bubble-item:hover { transform:scale(1.17); } .ds-bubble-active { border-color:#007fbd; background:#058aca; color:white; box-shadow:0 7px 13px -7px #07689c; } .ds-bubble-item:focus-visible { outline:3px solid #08a4dd; outline-offset:3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El estudio cívico luminoso",
+    "overview": "The interface presents a luminous blue cover before the study material. An oversized Instrument Serif wordmark sits over moving blue light and ribbon layers, with white pill actions into the hymn and questionnaire. Behind the study area, a pale cyan ambient field keeps the page airy. Once studying, the content returns to a measured editorial pace. A centered 990 px study section, serif folio titles, numbered verses, complete explanations, and a focused question list guide attention. A single retractable dock keeps navigation available without reducing the reading width.",
+    "keyCharacteristics": [
+      "Saturated blue gradient hero with soft moving light, ribbons, and oversized serif lettering.",
+      "Instrument Serif display type, Literata study text, and DM Sans controls and explanations.",
+      "Auto-hiding right dock with mode icons, contextual index, search, and saved markers.",
+      "White translucent cards, fine cyan borders, and active question focus."
+    ],
+    "rules": [
+      {
+        "name": "The Blue Field Rule",
+        "body": "Blue gradients and diffuse light are native to the cover; the study area uses pale cyan, translucent white, and fine blue strokes.",
+        "section": "colors"
+      },
+      {
+        "name": "The Marker Rule",
+        "body": "Coral, gold, and green enter through reader annotations; they do not replace blue navigation states.",
+        "section": "colors"
+      },
+      {
+        "name": "The Three Voice Rule",
+        "body": "Instrument Serif names the experience, Literata carries prompts and verse, and DM Sans carries explanation and interface language.",
+        "section": "typography"
+      },
+      {
+        "name": "The Retractable Dock Rule",
+        "body": "Keep all navigation in one right-edge dock; expose only its handle at rest and reveal search, modes, contextual destinations, and markers together.",
+        "section": "layout"
+      },
+      {
+        "name": "The Focused Card Rule",
+        "body": "Resting questions fade and blur; the active or keyboard-focused question becomes fully legible and elevated.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use the blue cover's gradients and moving light when extending the brand-facing first view.",
+      "Do retain the expressive display, literary reading, and direct interface type roles.",
+      "Do keep the dock reachable by touch and keyboard, with visible focus and reduced-motion behavior."
+    ],
+    "donts": [
+      "Don't turn reader marker colors into persistent navigation accents.",
+      "Don't elevate every question card; only the active or focused card gets the stronger white and shadow treatment.",
+      "Don't replace the complete answer and explanation text with short summaries."
+    ]
+  }
+}
