@@ -23,6 +23,7 @@ import path from 'node:path';
 const FILE = path.join(process.cwd(), 'src', 'data', 'questions.json');
 
 const CATEDRA = 'Cátedra del Himno Nacional de Honduras (Secretaría de Educación, 2023)';
+const PALACIOS = 'explicación oficial de Gualberto Cantarero Palacios («Interpretación y explicación del himno nacional», 1983)';
 
 /** @type {Record<number, { replace?: [string, string][], note?: string }>} */
 const FIXES = {
@@ -59,11 +60,8 @@ const FIXES = {
   47: { replace: [['Porque esta amparado', 'Porque está amparado']] },
 
   49: {
-    replace: [
-      ['Los otros cuatros versos restantes', 'Los otros cuatro versos restantes'],
-      ['los pueblos centroamericanos formaron una patria grande', 'los pueblos centroamericanos formaran una patria grande'],
-    ],
-    note: `Precisión de la ${CATEDRA}: la bandera lleva dos franjas azules —no una sola— que representan el cielo patrio, y la franja blanca del centro simboliza la paz, la serenidad y la pureza.`,
+    replace: [['Los otros cuatros versos restantes', 'Los otros cuatro versos restantes']],
+    note: `Precisión de la ${CATEDRA}: la bandera lleva dos franjas azules —no una sola— que representan el cielo patrio, y la franja blanca del centro simboliza la paz, la serenidad y la pureza. El «formaron» no es errata: la ${PALACIOS} dice «formaron y han de formar una sola patria», y el cuestionario abrevió la frase a su primera mitad.`,
   },
 
   50: { replace: [['descubierto por Cristobal Colón', 'descubierto por Cristóbal Colón'], ['Colón les llamo «indios»', 'Colón les llamó «indios»']] },
@@ -74,12 +72,8 @@ const FIXES = {
     replace: [
       ['que los nativos de Copantl opusieron resistencia', 'que los nativos lencas de Cerquín opusieron resistencia'],
       ['el gobernador Francisco Montejo', 'el gobernador Francisco de Montejo'],
-      [
-        'Lempira luchó seis meses defendiendo la integridad nacional hasta que en forma vil y traidora los españoles dieron muerte al caudillo siendo de esta manera inútil que nuestro héroe ofrendara su vida y su sangre por la defensa y la libertad de su pueblo.',
-        'Lempira luchó seis meses defendiendo la integridad nacional hasta que en forma vil y traidora los españoles dieron muerte al caudillo. Su resistencia no logró detener la conquista, pero su sangre y su ejemplo quedaron como el primer acto de defensa de la libertad de este pueblo: de aquella épica hazaña la leyenda sólo guardó el lugar ignorado de su sepulcro y el severo perfil de un peñón.',
-      ],
     ],
-    note: `Correcciones cotejadas: la resistencia se organizó en Cerquín, entre los lencas del occidente del país —no en «Copantl»—, y la ${CATEDRA} identifica el «peñón» del himno con Congolón. Sobre la muerte de Lempira conviven dos versiones: la tradicional, que lo da asesinado a traición durante una negociación, y la de la probanza de méritos de Rodrigo Ruiz (1558), que lo da caído en combate. El verso «era inútil que el indio… se aprestara a la lucha» dice que la lucha no podía vencer a la conquista, no que el sacrificio de Lempira fuera vano.`,
+    note: `Corrección cotejada: la ${PALACIOS} precisa que para 1537 ya había sido vencida la gente de Copantl y fueron las tribus aguerridas de Cerquín las que se unieron bajo el mando de Lempira; el cuestionario fundía ambos pueblos en uno. Esa misma explicación detalla que el gobernador Francisco de Montejo mandó al capitán Alonso de Cáceres, y que un emisario enviado con bandera blanca disparó su arcabuz e hirió en la frente al héroe. La ${CATEDRA} identifica el «peñón» del himno con Congolón. La historiografía moderna discute el relato de la traición: la probanza de méritos de Rodrigo Ruiz (1558) da a Lempira caído en combate.`,
   },
 
   53: {
